@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="card mb-3 mt-3" *ngFor="let item of categories">
+    <div class="row">
+      <div class="col-md-5">
+        <img src="{{ item.imageUrl }}" alt="" class="img-fluid rounded-start" />
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h6 class="card-title">{{ item.title }}</h6>
+          <p class="card-text">{{ item.authors }}</p>
+          <button
+            (click)="Delete(item.Id)"
+            class="btn btn-sm btn-outline-primary"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row mb-3 mt-5">
+      <div class="row">
+        <input #title type="text" class="form-control" placeholder="Title" />
+      </div>
+      <div class="row">
+        <input #author type="text" class="form-control" placeholder="Authors" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="row">
+        <input
+          #movieId
+          type="number"
+          class="form-control"
+          placeholder="Movie Id"
+        />
+      </div>
+      <div id="btn1" class="col">
+        <button
+          (click)="AddNews(title, author, movieId)"
+          class="btn btn-outline-primary"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

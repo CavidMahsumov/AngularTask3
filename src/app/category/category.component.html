@@ -1,0 +1,10 @@
+<div class="list-group">
+  <a
+    href=""
+    *ngFor="let c of categories"
+    (click)="IdDefined(c.Id)"
+    class="list-group-item list-group-item-action"
+    [ngClass]="GetClasses(c.Id)"
+    >{{ c.name }}</a
+  >
+</div>
